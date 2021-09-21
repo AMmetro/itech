@@ -13,8 +13,7 @@ document.getElementById("btnOpenModal2").onclick = function () {
   modifayedModalWidow.addInput();
 }
 
-//-------------------------------------------------------------------- 
-
+//-----------------
 var ModalWindow = function () {
 }
 
