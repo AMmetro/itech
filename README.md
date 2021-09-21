@@ -1,2 +1,1 @@
-
- deploy   https://ammetro.github.io/itech/
+deploy   https://ammetro.github.io/itech/
