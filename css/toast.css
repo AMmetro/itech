@@ -7,19 +7,23 @@
     flex-direction: column;
 }
 
-.toast {
-    padding: 10px ;
-    margin: 5px 2px;
-    border-radius: 12px;
+.toastMessage {
+    padding: 5px ;
+    font-size: 15px;
 }
 
-.toastWrapper {
+.toastField {
     padding: 10px 20px;
     margin: 20px 10px;
     border-radius: 12px;
     position: fixed;
     right: 10px;
     top: 10px;
+}
+
+.toastItem{
+    border-radius: 10px;
+    margin: 5px;
 }
 
 .toast-field {
@@ -37,7 +41,7 @@
 }
 
 .toast-skin-warning {
-    background-color: #d4dd55;
+    background-color: #eef070;
 }
 .toast-skin-success {
     background-color: #29dd23;
@@ -46,13 +50,8 @@
     background-color: #b8b9f6;
 }
 
-
-
-
-.close-icon
+.close-button
 {
-  /* display:block; */
-  /* box-sizing:border-box; */
   width:10px;
   height:10px;
   border-width:3px;
@@ -62,81 +61,23 @@
   background: -webkit-linear-gradient(-45deg, transparent 0%, transparent 46%, white 46%,  white 56%,transparent 56%, transparent 100%), -webkit-linear-gradient(45deg, transparent 0%, transparent 46%, white 46%,  white 56%,transparent 56%, transparent 100%);
   background-color:red;
   cursor: pointer;
-  /* box-shadow:0px 0px 5px 2px rgba(0,0,0,0.5); */
-  /* transition: all 0.3s ease; */
+  box-shadow:0px 0px 5px 2px rgba(0,0,0,0.5); 
+  transition: all 0.3s ease; 
 }
-
-
-
-.close-icon
-{
-  /* display:block; */
-  /* box-sizing:border-box; */
-  width:10px;
-  height:10px;
-  border-width:3px;
-  border-style: solid;
-  border-color:red;
-  border-radius:100%;
-  background: -webkit-linear-gradient(-45deg, transparent 0%, transparent 46%, white 46%,  white 56%,transparent 56%, transparent 100%), -webkit-linear-gradient(45deg, transparent 0%, transparent 46%, white 46%,  white 56%,transparent 56%, transparent 100%);
-  background-color:red;
-  cursor: pointer;
-  /* box-shadow:0px 0px 5px 2px rgba(0,0,0,0.5); */
-  /* transition: all 0.3s ease; */
-}
-
-
-  /* .button_close{
-      border: 1px solid;
-      border-radius: 12px;
-      cursor: pointer;
-      width: 15px;
-      height: 15px;
-  } */
-
-
-/* -------------close button------------------------------------ */
 
 .close_button-container{
     display: flex;
     justify-content: flex-end;
-     background-color: transparent;
+    padding-right: 10px;
+    padding-top: 5px;
 }
 
 
 .close_button {
-    /* background-color: transparent; */
     border: 1px solid black;
     border-radius: 10px;
     cursor: pointer;
-    /* position: relative; */
     height: 12px;
     width: 12px;
     margin-right: 10px;
-
 }
-
-.button__line {
-    background-color: black;
-    position: absolute;
-    height: 1px;
-    width: 100%;
-}
-
-.button__line-first {
-    left: 0px;
-    top: 50%;
-    transform: translate(0%, -50%) rotate(45deg);
-    /* Size */
-    /* height: 1px;
-    width: 100%; */
-}
-
-.button__line-second {
-    left: 50%;
-    top: 0px;
-    transform: translate(-50%, 0%) rotate(45deg);
-    height: 100%;
-    width: 1px;
-}
-
