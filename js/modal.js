@@ -55,10 +55,9 @@ var ModalWindow = function (message) {
           }
 }
 
-
 var ModifayedModalWidow = function (options) {
   ModalWindow.apply(this, arguments);
-}
+} 
 
 //  reassign prototype for ModifayedModalWidow with Object.create(parametrs) 
 ModifayedModalWidow.prototype = Object.create(ModalWindow.prototype);

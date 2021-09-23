@@ -10,6 +10,7 @@
 .toastMessage {
     padding: 5px ;
     font-size: 15px;
+    display: flex;
 }
 
 .toastField {
@@ -35,6 +36,10 @@
 }
 
 
+
+.toast-skin-styled {
+    background-color: lightblue;
+}
 
 .toast-skin-error {
     background-color: #F15B2A;
