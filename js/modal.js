@@ -14,14 +14,15 @@ class ModalWindow {
   constructor(message) {
     this.message = message;
     this.modal = document.createElement("div");
+    this.modalContentHolder = document.createElement("div");
   }
   makeModal() {
     this.modal.classList.add("modal")
     this.modal.style.display = "block";
     document.querySelector('body').appendChild(this.modal);
 
-    const modalContentHolder = document.createElement("div");
-    modalContentHolder.classList.add("modal-content");
+    this.modalContentHolder = document.createElement("div");
+    this.modalContentHolder.classList.add("modal-content");
     const modalCloseBtn = document.createElement("span")
     modalCloseBtn.classList.add("modalCloseBtn");
     modalCloseBtn.innerHTML = "&times";
@@ -29,22 +30,22 @@ class ModalWindow {
     var self = this;
     modalCloseBtn.onclick = function () {
       self.modal.style.display = "none";
-      modalContentHolder.remove();
+      self.modalContentHolder.remove();
     };
 
-    modalContentHolder.appendChild(modalCloseBtn);
+    this.modalContentHolder.appendChild(modalCloseBtn);
     const modalContentTxt = document.createElement("p");
     modalContentTxt.innerText = this.message;
-    modalContentHolder.appendChild(modalContentTxt);
-    this.modal.appendChild(modalContentHolder);
+    this.modalContentHolder.appendChild(modalContentTxt);
+    this.modal.appendChild(this.modalContentHolder);
 
 
     var self = this;
     this.addCloseBtn = function () {
       window.onclick = function (event) {
-       if (event.target == self.modal) {
-        self.modal.style.display = "none";
-        modalContentHolder.remove()
+        if (event.target == self.modal) {
+          self.modal.style.display = "none";
+          self.modalContentHolder.remove()
         }
       }
     }
@@ -68,7 +69,6 @@ class ModifayedModalWidow extends ModalWindow {
 
     inputHolder.appendChild(hint);
     inputHolder.appendChild(input);
-
-    this.modal.appendChild(inputHolder);
+    this.modalContentHolder.appendChild(inputHolder);
   }
 }
