@@ -18,7 +18,7 @@ export default function Task5() {
         <div>
 
             <button onClick={()=>getUserOrderStates(
-                 ['initial','inWork']
+                 ['initial','inWork','fullfilled']
             )}>Task4</button>
 
         </div>
