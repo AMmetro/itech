@@ -17,10 +17,9 @@ export default function Task5() {
     return (
         <div>
 
-            {/*<button onClick={()=>filterOnlyInitialAndInWorkOrder({*/}
-            {/*    state: 'initial',*/}
-            {/*    sum: 12*/}
-            {/*})}>Task4</button>*/}
+            <button onClick={()=>getUserOrderStates(
+                 ['initial','inWork']
+            )}>Task4</button>
 
         </div>
     )
