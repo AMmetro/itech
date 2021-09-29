@@ -1,10 +1,9 @@
-import React from 'react'
 
 export default function Task5() {
 
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    type FIXME = any
+    type FIXME = OrderState[]
 
     type OrderState = 'initial' | 'inWork' | 'buyingSupplies' | 'producing' | 'fullfilled'
 

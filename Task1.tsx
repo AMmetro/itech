@@ -1,17 +1,11 @@
-import React from 'react'
-
-
 
 export default function Task1() {
 
-    type FIXME = string[];
-    type OrderState = 'initial' | 'inWork' | 'buyingSupplies' | 'producing' | 'fullfilled'
+    type filteredStates='initial' | 'inWork' | 'fullfilled'
+    type FIXME = filteredStates[];
 
-    // ----------------------------------------------------------------------------------------
-    //              эквивалентно ???
-    //      type filteredStatesType = string[]
-    //      const filteredStates = [] as FIXME
-    // ----------------------------------------------------------------------------------------
+    
+    type OrderState = 'initial' | 'inWork' | 'buyingSupplies' | 'producing' | 'fullfilled'
 
     const getUserOrderStates = (orderStates: OrderState[]): FIXME => {
         const filteredStates = [] as FIXME
