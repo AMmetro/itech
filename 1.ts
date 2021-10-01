@@ -3,7 +3,8 @@
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 
-type FIXME = Exclude<OrderState,'buyingSupplies' | 'producing' >[]
+
+type FIXME = Exclude<OrderState,'buyingSupplies' | 'producing' >[] 
 
 type OrderState = 'initial' | 'inWork' | 'buyingSupplies' | 'producing' | 'fullfilled'
 
