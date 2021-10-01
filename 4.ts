@@ -15,9 +15,8 @@ type FIXME  ={
 } | null
 
 
-
 type Order =
-  | {
+   | {
       state: 'initial'
       sum: number
     }
@@ -47,6 +46,8 @@ type Order =
       produceEstimate: Date
       fullfillmentDate: Date
     }
+
+
 
 
 export const filterOnlyInitialAndInWorkOrder = (order: Order): FIXME => {
