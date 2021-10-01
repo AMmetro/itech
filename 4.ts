@@ -5,7 +5,7 @@
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 
-type FIXME = SmolOrdeer | null
+type FIXME  = Omit<Order,'suppliesSum'|'produceEstimate'|'fullfillmentDate'>
 
 type SmolOrdeer = {
   state: 'initial'
