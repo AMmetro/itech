@@ -9,6 +9,7 @@ class Rectangle {
     this.width = width;
     this.height = height;
   }
+  area(){ return this.width * this.height;}
 }
 
 class Circle {
@@ -17,15 +18,15 @@ class Circle {
   constructor(radius: number) {
     this.radius = radius;
   }
+  area(){ return (this.radius ** 2) * Math.PI}
 }
 
 function computeSpace(shapes: Array<Rectangle | Circle>) {
   return shapes.reduce((calculatedArea, shape) => {
-    if (shape instanceof Rectangle) {
-      return calculatedArea + shape.width * shape.height;
-    }
-    if (shape instanceof Circle) {
-      return calculatedArea + shape.radius * Math.PI;
-    }
+    calculatedArea += shape.area()
+    return calculatedArea 
   }, 0);
 }
+
+
+ 

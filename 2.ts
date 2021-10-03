@@ -1,6 +1,7 @@
 //В данном коде происходит нарушение Open-closed принципа
 //Исправьте следующий код так, чтобы данный принцип соблюдался, сохранив исходную функциональность кода.
 
+
 type OrderView = {};
 type Order = {};
 
@@ -16,19 +17,31 @@ class OrderPresenter {
   }
 }
 
-class OrderSystem {
-  private mailServer: MailServer;
-  private orderPresenter: OrderPresenter;
+interface IEmailPresenter{presenter(order:Order):OrderView}
+interface IMobilePresenter{presenter(order:Order):OrderView}
 
-  constructor() {
-    this.mailServer = new MailServer();
-    this.orderPresenter = new OrderPresenter();
+
+class OrderSystem {
+  private mailServer: MailServer;                        
+  private orderPresenter: OrderPresenter;              
+
+  constructor( emailPresenter:IEmailPresenter,
+    mobilePresenter:IMobilePresenter)
+     {
+      this.emailPresenter =  orderPresenter
+      this.mobilePresenter = mobilePresenter
+      this.mailServer= new MailServer()
   }
 
   public createOrder(): OrderView {
+   
     const order = {} as Order;
-    const orderView = this.orderPresenter.present(order);
-    this.mailServer.send(orderView);
-    return orderView as OrderView;
+    
+    const emailView = this.emailPresenter.present(order);
+    this.mailServer.send(emailView);
+
+    const mobileView = this.mobilePresenter.present(order);
+    
+    return mobileView as OrderView;
   }
 }

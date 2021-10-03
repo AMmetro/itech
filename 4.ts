@@ -1,12 +1,15 @@
 //В данном коде происходит нарушение Interface Segregation принципа
 //Исправьте следующий код так, чтобы данный принцип соблюдался, сохранив исходную функциональность кода.
 
-interface Actions {
+interface Ifly {
   fly(): void;
+}
+
+interface Idrive {
   drive(): void;
 }
 
-class AirPlane implements Actions {
+class AirPlane implements Ifly,Idrive {
   public fly() {
     console.log("I can fly");
   }
@@ -15,11 +18,12 @@ class AirPlane implements Actions {
   }
 }
 
-class Car implements Actions {
-  public fly() {
-    throw new Error("I can't fly");
-  }
+class Car implements Idrive {
   public drive() {
     console.log("I can drive");
   }
 }
+
+const car=new Car()
+const airPlane=new AirPlane()
+
